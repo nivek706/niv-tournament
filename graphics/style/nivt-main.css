@@ -1,0 +1,11 @@
+.content{
+	width: 1920px;
+	height: 1080px;
+	position: absolute;
+	overflow: hidden;
+	margin: 0;
+	top: 0;
+	left: 0;
+
+	font-family: "Montserrat", "Open Sans", sans-serif;
+}

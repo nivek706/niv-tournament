@@ -1,0 +1,68 @@
+{
+  "name": "niv-tournament",
+  "version": "0.0.0",
+  "description": "NodeCG driven overlays for multiple esport tournament broadcasts",
+  "homepage": "",
+  "author": {
+    "name": "Kevin Wells",
+    "email": "nivek706@gmail.com",
+    "url": ""
+  },
+  "files": [
+    "dashboard",
+    "graphics",
+    "extension.js",
+    "extension"
+  ],
+  "keywords": [
+    "",
+    "nodecg-bundle"
+  ],
+  "nodecg": {
+    "compatibleRange": "~0.8.0",
+    "dashboardPanels": [{
+      "name": "niv-tournament",
+      "title": "niv-tournament",
+      "width": 4,
+      "file": "niv-tournament.html",
+      "headerColor": "#0080ff"
+    }],
+    "graphics": [{
+      "file": "index.html",
+      "width": 1920,
+      "height": 1080,
+      "singleInstance": false
+    }, {
+      "file": "intro.html",
+      "width": 1920,
+      "height": 1080,
+      "singleInstance": false
+    }, {
+      "file": "upcoming-match.html",
+      "width": 1920,
+      "height": 1080,
+      "singleInstance": false
+    }, {
+      "file": "upcoming-3caster.html",
+      "width": 1920,
+      "height": 1080,
+      "singleInstance": false
+    }, {
+      "file": "ingame.html",
+      "width": 1920,
+      "height": 1080,
+      "singleInstance": false
+    }, {
+      "file": "brb.html",
+      "width": 1920,
+      "height": 1080,
+      "singleInstance": false
+    }, {
+      "file": "caster-fullscreen.html",
+      "width": 1920,
+      "height": 1080,
+      "singleInstance": false
+    }]
+  },
+  "repository": "https://github.com/nodecg/nodecg.git"
+}

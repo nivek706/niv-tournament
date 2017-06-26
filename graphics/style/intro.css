@@ -1,0 +1,69 @@
+.content {
+	background-image: url("/graphics/mwc-layout-new/img/mwc-intro-v3-720.png");
+	font-family: "Open Sans";
+}
+
+#meet-the-players {
+    font-size: 26px;
+    font-weight: bold;
+}
+
+#player-area {
+    position: absolute;
+    height: auto;
+    width: auto;
+    top: 280px;
+    left: 219px;
+}
+
+#player-info-area {
+    font-size: 20px;
+}
+
+#player-name {
+    font-size: 26px;
+}
+
+#columns {
+    width: 350px;
+    display: table;
+}
+#player-column1 {
+    float: left;
+    width: 50%;
+}
+
+#player-column2 {
+    float: right;
+    width: 50%;
+}
+
+#player-desc {
+    display: inline-block;
+}
+
+#countdown-area {
+	position: absolute;
+	left: 655px;
+	top: 639px;
+	font-weight: normal;
+	color: #0080ff;
+	font-size: 26px;
+}
+
+#clock-main {
+	color: black;
+	font-family: "Droid Sans Mono";
+	font-weight: normal;
+	position: relative;
+	left: 25px;
+	
+}
+
+#mwc-logo {
+	position: absolute;
+	height: 102px;
+	width: auto;
+	left: 29px;
+	top: 32px;
+}
