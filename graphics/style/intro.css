@@ -1,69 +1,43 @@
 .content {
-	background-image: url("/graphics/mwc-layout-new/img/mwc-intro-v3-720.png");
-	font-family: "Open Sans";
+				z-index: 2;
 }
 
-#meet-the-players {
-    font-size: 26px;
-    font-weight: bold;
-}
-
-#player-area {
-    position: absolute;
-    height: auto;
-    width: auto;
-    top: 280px;
-    left: 219px;
-}
-
-#player-info-area {
-    font-size: 20px;
-}
-
-#player-name {
-    font-size: 26px;
-}
-
-#columns {
-    width: 350px;
-    display: table;
-}
-#player-column1 {
-    float: left;
-    width: 50%;
-}
-
-#player-column2 {
-    float: right;
-    width: 50%;
-}
-
-#player-desc {
-    display: inline-block;
+.glass-bg {
+				position: absolute;
+				background-color: #9e9e9e;
+				width: 1920px;
+				height: 1080px;
+				opacity: 0.8;
+				z-index: 1;
 }
 
 #countdown-area {
-	position: absolute;
-	left: 655px;
-	top: 639px;
-	font-weight: normal;
-	color: #0080ff;
-	font-size: 26px;
+				display: block;
+				margin: auto;
+				text-align: center;
+				margin-top: 23%;
+				font-size: 88px;
 }
 
 #clock-main {
-	color: black;
-	font-family: "Droid Sans Mono";
-	font-weight: normal;
-	position: relative;
-	left: 25px;
-	
+				color: black;
+				font-family: "Droid Sans Mono";
+				font-weight: normal;
+				position: relative;
 }
 
-#mwc-logo {
-	position: absolute;
-	height: 102px;
-	width: auto;
-	left: 29px;
-	top: 32px;
+#div-message {
+				position: absolute;
+				text-align: center;
+				left: 873px;
+				top: 292px;
+				font-size: 26px;
+}
+
+#obp-logo {
+				display: block;
+				margin: auto;
+				text-align: center;
+				margin-top: 10%;
+				top: 80%;
 }

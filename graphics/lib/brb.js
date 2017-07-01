@@ -1,15 +1,10 @@
 
-var repPlayerArray = nodecg.Replicant('playerArray');
 var repTimerEnd = nodecg.Replicant('timerEnd');
 
-repPlayerArray.on('change', function(oldValue, newValue) {
-	//start the carousel a-rollin'
-	
-});
 
 nodecg.listenFor('startTimer', function() {
 	//repTimerEnd should have been updated, so we'll just use that
-	
+
 	//countdown to a certain time (or countdown a set amount of time)
 	initializeClock(repTimerEnd.value);
 });
@@ -34,7 +29,7 @@ function getTimeRemaining(endtime){
 //otherwise, we're unable to clear any prior countdown (resulting in wonkiness)
 var timeinterval;
 function initializeClock(endtime){
-	
+
 	clearInterval(timeinterval);
 
 	function updateClock(){
