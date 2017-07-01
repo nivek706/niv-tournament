@@ -28,22 +28,7 @@
       "headerColor": "#0080ff"
     }],
     "graphics": [{
-      "file": "index.html",
-      "width": 1920,
-      "height": 1080,
-      "singleInstance": false
-    }, {
       "file": "intro.html",
-      "width": 1920,
-      "height": 1080,
-      "singleInstance": false
-    }, {
-      "file": "upcoming-match.html",
-      "width": 1920,
-      "height": 1080,
-      "singleInstance": false
-    }, {
-      "file": "upcoming-3caster.html",
       "width": 1920,
       "height": 1080,
       "singleInstance": false
