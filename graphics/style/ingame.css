@@ -4,13 +4,13 @@
 }
 
 #match-name{
-	color: #212121;
+	color: #fbfffe;
 	font-size: 22px;
 	font-weight: bold;
-	text-shadow: 1px 1px white;
+	background-color: #23272a;
 	position: absolute;
-	top: 483px;
-	left: 3px;
+	top: 782px;
+	left: 96px;
 }
 
 #logo {
