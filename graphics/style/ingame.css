@@ -11,10 +11,13 @@
 	position: absolute;
 	top: 782px;
 	left: 96px;
+	padding-left: 2px;
+	padding-right: 2px;
 }
 
 #logo {
 	display: block;
   float: right;
-  width: 10%;
+  width: 120px;
+	padding: 10px;
 }

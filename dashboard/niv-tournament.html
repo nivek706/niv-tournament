@@ -21,7 +21,7 @@
 			</div>
 		</div>
 		<div class="form-group">
-			<label for="matchName">Caster Info</label>
+			<label for="casterInfo">Caster Info</label>
 			<div class="input-group">
 				<input type="text" class="form-control" id="casterNames" placeholder="Caster Names">
 				<span class="input-group-btn">
@@ -30,27 +30,48 @@
 			</div>
 		</div>
 
-		Timer/Countdown
-		<div class="radio">
-			<label>
+		<div class="form-group">
+			<label for="timer">Timer/Countdown</label>
+			<div class="input-group">
+				<div class="radio">
+					<label>
 				<input type="radio" name="radioTime" value="120000">2 minutes</label>
-		</div>
-		<div class="radio">
-			<label>
+				</div>
+				<div class="radio">
+					<label>
 				<input type="radio" name="radioTime" value="180000">3 minutes</label>
-		</div>
-		<div class="radio">
-			<label>
+				</div>
+				<div class="radio">
+					<label>
 				<input type="radio" name="radioTime" value="300000">5 minutes</label>
-		</div>
-		<div class="radio">
-			<label>
+				</div>
+				<div class="radio">
+					<label>
 				<input type="radio" name="radioTime" value="custom">
 				<input type="number" id="customTime" placeholder="Custom Amount (minutes)">
 			</label>
+				</div>
+				<div>
+					<button type="button" id="ctrl-startTimer" class="btn-primary btn btn-sm">Update Timer</button>
+				</div>
+			</div>
 		</div>
-		<div>
-			<button type="button" id="ctrl-startTimer" class="btn-primary btn btn-sm">Update Timer</button>
+
+		<div class="form-group">
+			<label for="overlayImages">Overlay Images</label>
+			<!--
+			<div class="input-group">
+				<button type="button" type="button" id="ctrl-getOverlayImages" class="btn btn-default">Refresh Overlay Images</button>
+				<div id="overlay-img-list" class="asset-img-list">
+				</div>
+			-->
+				<div>
+					Select logo image
+					<select id="ctrl-selectLogoImage" class="asset-img-selector">
+					</select>
+				</div>
+
+			</div>
 		</div>
 
 	</div>

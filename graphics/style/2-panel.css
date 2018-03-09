@@ -1,6 +1,7 @@
 .content {
   width: 1920px;
   height: 1080px;
+  background-image: url("/assets/niv-tournament/overlay-images/cgc-2panel.png");
 }
 
 .nameplate {
@@ -19,10 +20,9 @@
 
 #logo {
   display: block;
-  margin-left: auto;
-  margin-right: auto;
-  margin-top: 50%;
-  height: 120px;
+  margin-left: 62%;
+  margin-top: 1%;
+  height: 500px;
   padding: 2px;
 
 

@@ -16,29 +16,28 @@
 				display: block;
 				margin: auto;
 				text-align: center;
-				margin-top: 23%;
+				margin-top: 15%;
 				font-size: 88px;
 }
 
 #clock-main {
-				color: black;
+				color: #ffffff;
 				font-family: "Droid Sans Mono";
 				font-weight: normal;
 				position: relative;
 }
 
 #div-brb {
-				position: absolute;
+				display: block;
 				text-align: center;
-				left: 840px;
-				top: 292px;
-				font-size: 26px;
+				font-size: 40px;
+				color: rgb(159, 137, 88);
 }
 
-#obp-logo {
+#logo {
 				display: block;
 				margin: auto;
 				text-align: center;
-				margin-top: 10%;
-				top: 80%;
+				margin-top: 5%;
+				height: 500px;
 }

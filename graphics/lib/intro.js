@@ -1,6 +1,9 @@
-
+var repLogoImageAsset = nodecg.Replicant("logoImageAsset");
 var repTimerEnd = nodecg.Replicant('timerEnd');
 
+repLogoImageAsset.on('change', function(newValue, oldValue){
+	document.getElementById('logo').src = newValue["url"];
+});
 
 nodecg.listenFor('startTimer', function() {
 	//repTimerEnd should have been updated, so we'll just use that
