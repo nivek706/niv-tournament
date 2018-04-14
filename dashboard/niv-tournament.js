@@ -12,12 +12,14 @@ var updateTimer = document.getElementById('ctrl-startTimer');
 var refreshImages = document.getElementById('ctrl-getOverlayImages');
 
 var selectLogoImage = document.getElementById('ctrl-selectLogoImage');
+var selectBgImage = document.getElementById('ctrl-selectBgImage');
 
 var repMatchName = nodecg.Replicant('matchName');
 var repTimerEnd = nodecg.Replicant('timerEnd');
 var repCasterNames = nodecg.Replicant('casterNames');
 const repOverlayImages = nodecg.Replicant('assets:overlay-images');
 var repLogoImageAsset = nodecg.Replicant('logoImageAsset');
+var repBgImageAsset = nodecg.Replicant('bgImageAsset');
 
 
 updateMatchName.addEventListener('click', function() {
@@ -78,6 +80,13 @@ selectLogoImage.addEventListener('change', function() {
 	repLogoImageAsset.value = tmpFindAssetByURL;
 });
 
+selectBgImage.addEventListener('change', function() {
+	var tmpFindAssetByURL = repOverlayImages.value.find(function(element) {
+		return element["url"] == selectBgImage.value;
+	});
+	repBgImageAsset.value = tmpFindAssetByURL;
+});
+
 repMatchName.on('change', function(newValue, oldValue) {
 	console.log("matchName changed from " + oldValue + " to " + newValue);
 	document.getElementById("matchName").value = newValue;
@@ -100,4 +109,7 @@ repOverlayImages.on('change', function(newValue, oldValue) {
 repLogoImageAsset.on('change', function(newValue, oldValue) {
 	console.log("repLogoImageAsset change from " + oldValue + " to " + newValue);
 	document.getElementById('ctrl-selectLogoImage').value = newValue["url"];
+});
+repBgImageAsset.on('change', function(newValue, oldValue) {
+	document.getElementById('ctrl-selectBgImage').value = newValue["url"];
 });

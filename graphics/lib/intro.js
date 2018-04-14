@@ -1,8 +1,13 @@
 var repLogoImageAsset = nodecg.Replicant("logoImageAsset");
+var repBgImageAsset = nodecg.Replicant("bgImageAsset");
 var repTimerEnd = nodecg.Replicant('timerEnd');
 
 repLogoImageAsset.on('change', function(newValue, oldValue){
 	document.getElementById('logo').src = newValue["url"];
+});
+
+repBgImageAsset.on('change', function(newValue, oldValue){
+	document.getElementById('content').style.backgroundImage = 'url('+newValue["url"]+')';
 });
 
 nodecg.listenFor('startTimer', function() {
