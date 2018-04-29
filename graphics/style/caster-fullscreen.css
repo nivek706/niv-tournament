@@ -4,8 +4,8 @@
 }
 
 .nameplate {
-  background-color: rgb(53, 13, 14);
-  color: rgb(159,137,88);
+  background-color: #c8c8c8;
+  color: #ffffff;
   box-shadow: 5px 5px;
   position: absolute;
   top: 80%;

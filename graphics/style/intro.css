@@ -1,6 +1,5 @@
-.content {
+#content {
 				z-index: 2;
-				background-image: url("/assets/niv-tournament/overlay-images/cgc_chicago_lan_3_days.jpg");
 }
 
 .glass-bg {
@@ -31,7 +30,11 @@
 				display: block;
 				text-align: center;
 				font-size: 40px;
-				color: rgb(159,137,88);
+				color: #ffffff;
+}
+
+#background {
+
 }
 
 #logo {
