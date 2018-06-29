@@ -1,9 +1,9 @@
 .content {
   width: 1920px;
   height: 1080px;
-  background-image: url("/assets/niv-tournament/overlay-images/cgc-2panel.png");
 }
 
+/*
 .nameplate {
   background-color: rgb(53, 13, 14);
   color: rgb(159,137,88);
@@ -17,13 +17,35 @@
   font-size: 64px;
   text-align: center;
 }
+*/
 
 #logo {
-  display: block;
-  margin-left: 85px;
-  margin-top: 10%;
-  height: 450px;
+  position: absolute;
+  left: 80px;
+  top: 173px;
+  width: 427px;
   padding: 2px;
+}
 
+#panel-small {
+  position: absolute;
+  top: 668px;
+  left: 80px;
+  height: 240px;
+  width: 427px;
+  border: 4px;
+  border-style: solid;
+  border-color: grey;
+}
+
+#panel-large {
+  position: absolute;
+  top: 173px;
+  left: 536px;
+  height: 735px;
+  width: 1307px;
+  border: 4px;
+  border-style: solid;
+  border-color: grey;
 
 }

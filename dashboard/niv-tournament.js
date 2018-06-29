@@ -111,5 +111,6 @@ repLogoImageAsset.on('change', function(newValue, oldValue) {
 	document.getElementById('ctrl-selectLogoImage').value = newValue["url"];
 });
 repBgImageAsset.on('change', function(newValue, oldValue) {
+	console.log("repBgImageAsset change from " + oldValue + " to " + newValue);
 	document.getElementById('ctrl-selectBgImage').value = newValue["url"];
 });
