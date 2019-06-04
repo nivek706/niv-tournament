@@ -1,9 +1,20 @@
 'use strict';
 
-
 if (window.jQuery) {
 	console.log("jQuery is loaded for niv-tournament.js");
 }
+
+// var repChallongeConnector = nodecg.Replicant('ChallongeConnector');
+// nodecg.sendMessage('getTournaments');
+// repChallongeConnector.on('change', function(newValue, oldValue) {
+// 	console.log("challonge oldValue: " + oldValue);
+// 	console.log("challonge newvalue: " + newValue);
+// 	console.log("challonge newValue.length: " + newValue.length);
+// 	console.log("challonge tournament names:");
+// 	for(var i=0; i<newValue.length; i++) {
+// 		console.log(newValue[i].tournament.name);
+// 	}
+// });
 
 // We like to target our buttons and inputs with `ctrl-` class names. However, you can use whatever you want!
 var updateMatchName = document.getElementById('ctrl-matchname');
