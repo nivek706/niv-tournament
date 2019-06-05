@@ -1,5 +1,5 @@
 console.log("Hello World")
-var api_key = "";
+var api_key = "pkr7TAuc1lNtVILHfMD8x51TRBjcKXom2VlSTAGt";
 var url = 'https://nivek706:' + api_key + '@api.challonge.com/v1/';
 
 const request = require('request');
@@ -11,6 +11,10 @@ var repCurrTournParticipants = nodecg.Replicant('currTournParticipants');
 var repCurrTournMatches = nodecg.Replicant('currTournMatches');
 
 nodecg.listenFor('getTournaments', data => {
+  var url = "";
+  if(data.apikey && data.username) {
+
+  }
   console.log(data);
   request.get(url + 'tournaments', { json: true }, (err, res, body) => {
     if (err) { return console.log(err); }
