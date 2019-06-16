@@ -16,7 +16,7 @@ submitChallonge.addEventListener('click', function () {
     var data = {};
     data.id = challongeID.value;
     data.key = challongeKey.value;
-    console.log(`id: ${data.id} | key: ${data.key}`);
+    // console.log(`id: ${data.id} | key: ${data.key}`);
     nodecg.sendMessage('getTournaments', data);
 
 });
@@ -26,7 +26,7 @@ refreshMatches.addEventListener('click', function () {
     data.id = challongeID.value;
     data.key = challongeKey.value;
     data.tournament = selectTournament.value;
-    console.log(`id: ${data.id} | key: ${data.key}`);
+    // console.log(`id: ${data.id} | key: ${data.key}`);
     nodecg.sendMessage('getParticipantsByTournamentId', data).then((value) => {
         console.log("repCurrTournParticipants really ready");
         nodecg.sendMessage('getMatchesByTournamentId', data);
@@ -78,9 +78,9 @@ repCurrTournParticipants.on('change', function (newValue, oldValue) {
 });
 
 repCurrTournMatches.on('change', function (newValue, oldValue) {
-    console.log(file + "repCurrTournMatches changed: " + newValue);
+    // console.log(file + "repCurrTournMatches changed: " + newValue);
     NodeCG.waitForReplicants(repCurrTournParticipants).then(() => {
-        console.log("repCurrTournParticipants ready to go");
+        // console.log("repCurrTournParticipants ready to go");
 
         var eleAllMatches = document.getElementById("matches-all");
         var matchesHTML = "";
@@ -92,7 +92,7 @@ repCurrTournMatches.on('change', function (newValue, oldValue) {
             if (match.round < 0) {
                 roundType = "Losers";
             }
-            console.log("Checking participants for match: " + match.id);
+            // console.log("Checking participants for match: " + match.id);
 
             var team1Name = getTeamNameByID(match.player1_id, repCurrTournParticipants.value);
             var team2Name = getTeamNameByID(match.player2_id, repCurrTournParticipants.value);
