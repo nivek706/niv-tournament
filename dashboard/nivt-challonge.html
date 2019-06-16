@@ -2,13 +2,31 @@
 <html>
 
 <head>
-
+    <meta charset="UTF-8">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous"></script>
 </head>
 
 <body>
+    <div class="form-row">
+        <div class="col">
+            <input type="text" class="form-control" id="challongeID" placeholder="Challonge ID">
+        </div>
+        <div class="col">
+            <input type="password" class="form-control" id="challongeKey" placeholder="Challonge API Key">
+        </div>
+        <div class="col">
+            <button type="button" id="ctrl-submitChallonge" class="btn btn-primary">Submit</button>
+        </div>
+    </div>
     <div class="form-group">
         <label for="ctrl-selectTournament">Select Tournament</label>
         <select id="ctrl-selectTournament"></select>
+        <button type="button" id="ctrl-refreshMatches" class="btn-sm btn-primary">Refresh Matches</button>
     </div>
     <div id="tournament-info">
         <div id="participants">
