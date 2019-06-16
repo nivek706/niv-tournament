@@ -47,7 +47,13 @@
       "width": 4,
       "file": "niv-tournament.html",
       "headerColor": "#0080ff"
-    }],
+    }, {
+      "name": "nivt-challonge",
+      "title": "nivt-challonge",
+      "file": "nivt-challonge.html",
+      "width": 4,
+      "headerColor": "#0080ff"
+      }],
     "graphics": [{
       "file": "intro.html",
       "width": 1920,

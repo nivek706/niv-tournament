@@ -3,21 +3,27 @@
 
 <head>
 	<meta charset="UTF-8">
-	<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+	<!-- <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
-	<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
-
+	<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script> -->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+		integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+		integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+		crossorigin="anonymous"></script>
 </head>
 
 <body>
-	<div class="btn-group btn-group-justified">
+	<!-- <div class="btn-group btn-group-justified"> -->
+	<form>
 		<div class="form-group">
-			<label for="matchName">Match Name</label>
+			<label for="matchName">Custom Match Name</label>
 			<div class="input-group">
 				<input type="text" class="form-control" id="matchName" placeholder="Match name">
 				<span class="input-group-btn">
-				<button type="button" type="button" id="ctrl-matchname" class="btn btn-default">Update</button>
-			</span>
+					<button type="button" id="ctrl-matchname" class="btn btn-primary">Update</button>
+				</span>
 			</div>
 		</div>
 		<div class="form-group">
@@ -25,35 +31,38 @@
 			<div class="input-group">
 				<input type="text" class="form-control" id="casterNames" placeholder="Caster Names">
 				<span class="input-group-btn">
-				<button type="button" type="button" id="ctrl-casterNames" class="btn btn-default">Update</button>
-			</span>
+					<button type="button" id="ctrl-casterNames" class="btn btn-primary">Update</button>
+				</span>
 			</div>
+		</div>
+		<div class="form-group">
+			<label for="matchSelect">Select Open Match</label>
+			<select multiple class="form-control" id="ctrl-matchSelect">
+				<!-- values will be inserted here -->
+			</select>
+			<div id="matchInfo">Selected: <span id="matchInfo-name"></span></div>
 		</div>
 
 		<div class="form-group">
 			<label for="timer">Timer/Countdown</label>
-			<div class="input-group">
-				<div class="radio">
-					<label>
-				<input type="radio" name="radioTime" value="120000">2 minutes</label>
-				</div>
-				<div class="radio">
-					<label>
-				<input type="radio" name="radioTime" value="180000">3 minutes</label>
-				</div>
-				<div class="radio">
-					<label>
-				<input type="radio" name="radioTime" value="300000">5 minutes</label>
-				</div>
-				<div class="radio">
-					<label>
+			<div class="form-check">
+				<input class="form-check-input" type="radio" name="radioTime" id="timer2min" value="120000">
+				<label class="form-check-label" for="timer2min">2 minutes</label>
+			</div>
+			<div class="form-check">
+				<input class="form-check-input" type="radio" name="radioTime" id="timer3min" value="180000">
+				<label class="form-check-label" for="timer3min">3 minutes</label>
+			</div>
+			<div class="form-check">
+				<input class="form-check-input" type="radio" name="radioTime" id="timer5min" value="300000">
+				<label class="form-check-label" for="timer5min">5 minutes</label>
+			</div>
+			<div class="form-check">
 				<input type="radio" name="radioTime" value="custom">
 				<input type="number" id="customTime" placeholder="Custom Amount (minutes)">
-			</label>
-				</div>
-				<div>
-					<button type="button" id="ctrl-startTimer" class="btn-primary btn btn-sm">Update Timer</button>
-				</div>
+			</div>
+			<div>
+				<button type="button" id="ctrl-startTimer" class="btn-primary btn btn-sm">Update Timer</button>
 			</div>
 		</div>
 
@@ -65,20 +74,20 @@
 				<div id="overlay-img-list" class="asset-img-list">
 				</div>
 			-->
-				<div>
-					Select logo image
-					<select id="ctrl-selectLogoImage" class="asset-img-selector">
-					</select>
-					<br>
-					Select background image
-					<select id="ctrl-selectBgImage" class="asset-img-selector" />
-					
-				</div>
+			<div>
+				Select logo image
+				<select id="ctrl-selectLogoImage" class="asset-img-selector">
+				</select>
+				<br>
+				Select background image
+				<select id="ctrl-selectBgImage" class="asset-img-selector" />
 
 			</div>
-		</div>
 
-	</div>
+		</div>
+		</div>
+	</form>
+	<!-- </div> -->
 
 	<script src="niv-tournament.js"></script>
 </body>

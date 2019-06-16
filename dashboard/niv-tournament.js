@@ -1,15 +1,27 @@
 'use strict';
 
-
 if (window.jQuery) {
 	console.log("jQuery is loaded for niv-tournament.js");
 }
+
+// var repChallongeConnector = nodecg.Replicant('ChallongeConnector');
+// nodecg.sendMessage('getTournaments');
+// repChallongeConnector.on('change', function(newValue, oldValue) {
+// 	console.log("challonge oldValue: " + oldValue);
+// 	console.log("challonge newvalue: " + newValue);
+// 	console.log("challonge newValue.length: " + newValue.length);
+// 	console.log("challonge tournament names:");
+// 	for(var i=0; i<newValue.length; i++) {
+// 		console.log(newValue[i].tournament.name);
+// 	}
+// });
 
 // We like to target our buttons and inputs with `ctrl-` class names. However, you can use whatever you want!
 var updateMatchName = document.getElementById('ctrl-matchname');
 var updateCasterNames = document.getElementById('ctrl-casterNames');
 var updateTimer = document.getElementById('ctrl-startTimer');
 var refreshImages = document.getElementById('ctrl-getOverlayImages');
+var matchSelect = document.getElementById('ctrl-matchSelect');
 
 var selectLogoImage = document.getElementById('ctrl-selectLogoImage');
 var selectBgImage = document.getElementById('ctrl-selectBgImage');
@@ -20,16 +32,25 @@ var repCasterNames = nodecg.Replicant('casterNames');
 const repOverlayImages = nodecg.Replicant('assets:overlay-images');
 var repLogoImageAsset = nodecg.Replicant('logoImageAsset');
 var repBgImageAsset = nodecg.Replicant('bgImageAsset');
+var repCurrTournMatches = nodecg.Replicant('currTournMatches');
+var repCurrTournParticipants = nodecg.Replicant('currTournParticipants');
 
 
-updateMatchName.addEventListener('click', function() {
+updateMatchName.addEventListener('click', function () {
 	repMatchName.value = document.getElementById('matchName').value;
 });
-updateCasterNames.addEventListener('click', function() {
+updateCasterNames.addEventListener('click', function () {
 	repCasterNames.value = document.getElementById('casterNames').value;
 });
 
-updateTimer.addEventListener('click', function() {
+matchSelect.addEventListener('change', function(value) {
+	console.log("Match selected: " + matchSelect.value);
+	var matchName = decodeURIComponent(matchSelect.value.split(";")[0]);
+	document.getElementById('matchInfo-name').innerHTML = matchName;
+	repMatchName.value = matchName;
+});
+
+updateTimer.addEventListener('click', function () {
 	//get the current time
 	var currentTimestamp = Date.now();
 	console.log("current time: " + currentTimestamp);
@@ -73,29 +94,54 @@ refreshImages.addEventListener('click', function() {
 });
 **/
 
-selectLogoImage.addEventListener('change', function() {
-	var tmpFindAssetByURL = repOverlayImages.value.find(function(element) {
+selectLogoImage.addEventListener('change', function () {
+	var tmpFindAssetByURL = repOverlayImages.value.find(function (element) {
 		return element["url"] == selectLogoImage.value;
 	});
 	repLogoImageAsset.value = tmpFindAssetByURL;
 });
 
-selectBgImage.addEventListener('change', function() {
-	var tmpFindAssetByURL = repOverlayImages.value.find(function(element) {
+selectBgImage.addEventListener('change', function () {
+	var tmpFindAssetByURL = repOverlayImages.value.find(function (element) {
 		return element["url"] == selectBgImage.value;
 	});
 	repBgImageAsset.value = tmpFindAssetByURL;
 });
 
-repMatchName.on('change', function(newValue, oldValue) {
+repMatchName.on('change', function (newValue, oldValue) {
 	console.log("matchName changed from " + oldValue + " to " + newValue);
 	document.getElementById("matchName").value = newValue;
 });
-repCasterNames.on('change', function(newValue, oldValue) {
+repCasterNames.on('change', function (newValue, oldValue) {
 	console.log("CasterNames changed from " + oldValue + " to " + newValue);
 	document.getElementById("casterNames").value = newValue;
 });
-repOverlayImages.on('change', function(newValue, oldValue) {
+repCurrTournMatches.on('change', function (newValue, oldValue) {
+	//get the active matches
+	NodeCG.waitForReplicants(repCurrTournParticipants).then(() => {
+		var selectHTML = "";
+
+		for (var i = 0; i < newValue.length; i++) {
+			var match = newValue[i].match;
+			if (match.state === "open") {
+				var roundType = "Winners";
+				if (match.round < 0) {
+					roundType = "Losers";
+				}
+				var team1Name = getTeamNameByID(match.player1_id, repCurrTournParticipants.value);
+				var team2Name = getTeamNameByID(match.player2_id, repCurrTournParticipants.value);
+				var matchName = `${roundType} Round ${Math.abs(match.round)}`;
+				// selectHTML = selectHTML.concat("<option>" + roundType + " Round " + Math.abs(match.round) + " | " + team1Name + " vs " + team2Name + "</option>");
+				var optValue = `${encodeURIComponent(matchName)};${encodeURIComponent(team1Name)};${encodeURIComponent(team2Name)}`;
+				selectHTML = selectHTML.concat(`<option value=\"${optValue}\">${matchName} | ${team1Name} vs ${team2Name}</option>`);
+			} else {
+				//do nothing, this is a closed match
+			}
+		}
+		matchSelect.innerHTML = selectHTML;
+	});
+});
+repOverlayImages.on('change', function (newValue, oldValue) {
 	console.log("OverlayImages changed from " + oldValue + " to " + newValue);
 	var assetSelectorContent = "<option value=\"none\">------</option>";
 	var assetImgList = document.getElementsByClassName('asset-img-selector');
@@ -106,11 +152,21 @@ repOverlayImages.on('change', function(newValue, oldValue) {
 		assetImgList[j].innerHTML = assetSelectorContent;
 	}
 });
-repLogoImageAsset.on('change', function(newValue, oldValue) {
+repLogoImageAsset.on('change', function (newValue, oldValue) {
 	console.log("repLogoImageAsset change from " + oldValue + " to " + newValue);
 	document.getElementById('ctrl-selectLogoImage').value = newValue["url"];
 });
-repBgImageAsset.on('change', function(newValue, oldValue) {
+repBgImageAsset.on('change', function (newValue, oldValue) {
 	console.log("repBgImageAsset change from " + oldValue + " to " + newValue);
 	document.getElementById('ctrl-selectBgImage').value = newValue["url"];
 });
+
+function getTeamNameByID(teamID, participantArray) {
+	console.log(participantArray);
+	for (let team of participantArray) {
+		if (team.participant["id"] == teamID) {
+			return team.participant["name"];
+		}
+	}
+	return "TBD";
+}
