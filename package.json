@@ -1,111 +1,90 @@
 {
-    "name": "niv-tournament",
-    "version": "0.0.0",
-    "description": "NodeCG driven overlays for multiple esport tournament broadcasts",
-    "homepage": "",
-    "author": {
-        "name": "Kevin Wells",
-        "email": "nivek706@gmail.com",
-        "url": ""
-    },
-    "files": [
-        "dashboard",
-        "graphics",
-        "extension.js",
-        "extension"
-    ],
-    "keywords": [
-        "",
-        "nodecg-bundle"
-    ],
-    "nodecg": {
-        "assetCategories": [{
-                "name": "overlay-images",
-                "title": "Overlay Images",
-                "allowedTypes": [
-                    "jpg",
-                    "jpeg",
-                    "gif",
-                    "png"
-                ]
-            },
-            {
-                "name": "player-pictures",
-                "title": "Player Pictures",
-                "allowedTypes": [
-                    "jpg",
-                    "jpeg",
-                    "gif",
-                    "png"
-                ]
-            }
-        ],
-        "compatibleRange": "",
-        "dashboardPanels": [{
-                "name": "niv-tournament",
-                "title": "niv-tournament",
-                "width": 4,
-                "file": "niv-tournament.html",
-                "headerColor": "#0080ff"
-            },
-            {
-                "name": "nivt-challonge",
-                "title": "nivt-challonge",
-                "file": "nivt-challonge.html",
-                "width": 4,
-                "headerColor": "#0080ff"
-            },
-            {
-                "name": "spotify-nowplaying",
-                "title": "spotify-nowplaying",
-                "file": "spotify-nowplaying.html",
-                "width": 4,
-                "headerColor": "#0080ff"
-            }
-        ],
-        "graphics": [{
-                "file": "intro.html",
-                "width": 1920,
-                "height": 1080,
-                "singleInstance": false
-            },
-            {
-                "file": "ingame.html",
-                "width": 1920,
-                "height": 1080,
-                "singleInstance": false
-            },
-            {
-                "file": "ingame-bw.html",
-                "width": 1920,
-                "height": 1080,
-                "singleInstance": false
-            },
-            {
-                "file": "brb.html",
-                "width": 1920,
-                "height": 1080,
-                "singleInstance": false
-            },
-            {
-                "file": "caster-fullscreen.html",
-                "width": 1920,
-                "height": 1080,
-                "singleInstance": false
-            },
-            {
-                "file": "2-panel.html",
-                "width": 1920,
-                "height": 1080,
-                "singleInstance": false
-            },
-            {
-                "file": "outro.html",
-                "width": 1920,
-                "height": 1080,
-                "singleInstance": false
-            }
+  "name": "niv-tournament",
+  "version": "0.0.0",
+  "description": "NodeCG driven overlays for multiple esport tournament broadcasts",
+  "homepage": "",
+  "author": {
+    "name": "Kevin Wells",
+    "email": "nivek706@gmail.com",
+    "url": ""
+  },
+  "files": [
+    "dashboard",
+    "graphics",
+    "extension.js",
+    "extension"
+  ],
+  "keywords": [
+    "",
+    "nodecg-bundle"
+  ],
+  "nodecg": {
+    "assetCategories": [{
+        "name": "overlay-images",
+        "title": "Overlay Images",
+        "allowedTypes": [
+          "jpg",
+          "jpeg",
+          "gif",
+          "png"
         ]
-    },
-    "repository": "https://github.com/nodecg/nodecg.git"
+      },
+      {
+        "name": "player-pictures",
+        "title": "Player Pictures",
+        "allowedTypes": [
+          "jpg",
+          "jpeg",
+          "gif",
+          "png"
+        ]
+      }
+    ],
+    "compatibleRange": "",
+    "dashboardPanels": [{
+      "name": "niv-tournament",
+      "title": "niv-tournament",
+      "width": 4,
+      "file": "niv-tournament.html",
+      "headerColor": "#0080ff"
+    }, {
+      "name": "nivt-challonge",
+      "title": "nivt-challonge",
+      "file": "nivt-challonge.html",
+      "width": 4,
+      "headerColor": "#0080ff"
+      }],
+    "graphics": [{
+      "file": "intro.html",
+      "width": 1920,
+      "height": 1080,
+      "singleInstance": false
+    }, {
+      "file": "ingame.html",
+      "width": 1920,
+      "height": 1080,
+      "singleInstance": false
+    }, {
+      "file": "brb.html",
+      "width": 1920,
+      "height": 1080,
+      "singleInstance": false
+    }, {
+      "file": "caster-fullscreen.html",
+      "width": 1920,
+      "height": 1080,
+      "singleInstance": false
+    }, {
+      "file": "2-panel.html",
+      "width": 1920,
+      "height": 1080,
+      "singleInstance": false
+    }, {
+      "file": "outro.html",
+      "width": 1920,
+      "height": 1080,
+      "singleInstance": false
+    }]
+  },
+  "repository": "https://github.com/nodecg/nodecg.git"
 }
