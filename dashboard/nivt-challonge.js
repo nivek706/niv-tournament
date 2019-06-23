@@ -71,7 +71,7 @@ repCurrTournParticipants.on('change', function (newValue, oldValue) {
         // console.log(newValue[i].participant);
         var participant = newValue[i].participant;
         if (participant.active) {
-            participantHTML = participantHTML.concat("<div>" + participant.name + " | " + participant.id + "</div>");
+            participantHTML = participantHTML.concat("<div>" + participant.display_name + " | " + participant.id + "</div>");
         }
     }
     eleAllParticipants.innerHTML = participantHTML;
@@ -120,7 +120,7 @@ function getTeamNameByID(teamID, participantArray) {
         // console.log("checking team: " + team.participant["id"]);
         if (team.participant["id"] == teamID) {
             // console.log("success");
-            return team.participant["name"];
+            return team.participant["display_name"];
         }
     }
     return "TBD";

@@ -165,7 +165,7 @@ function getTeamNameByID(teamID, participantArray) {
 	console.log(participantArray);
 	for (let team of participantArray) {
 		if (team.participant["id"] == teamID) {
-			return team.participant["name"];
+			return team.participant["display_name"];
 		}
 	}
 	return "TBD";
